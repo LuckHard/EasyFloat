@@ -16,7 +16,7 @@ import com.lzf.easyfloat.utils.InputMethodUtils
  * @date: 2019-07-10  14:16
  */
 @SuppressLint("ViewConstructor")
-internal class ParentFrameLayout(
+class ParentFrameLayout(
     context: Context,
     private val config: FloatConfig,
     attrs: AttributeSet? = null,

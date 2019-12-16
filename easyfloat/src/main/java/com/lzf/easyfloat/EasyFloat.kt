@@ -237,7 +237,7 @@ class EasyFloat {
          * 为了避免方法重载时 出现编译错误的情况，更改了方法名
          */
         fun registerDispatchKeyEventListener(listener: ((event: KeyEvent) -> Boolean)): Builder {
-            config.dispatchKeyEventListener
+            config.dispatchKeyEventListener = listener
             return this
         }
 
