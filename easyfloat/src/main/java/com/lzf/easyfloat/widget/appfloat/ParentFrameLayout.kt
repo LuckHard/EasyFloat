@@ -70,7 +70,10 @@ class ParentFrameLayout(
     var dispatchKeyEventListener: ((event: KeyEvent) -> Boolean)? = null
 
     override fun dispatchKeyEvent(event: KeyEvent): Boolean {
-        return dispatchKeyEventListener?.invoke(event) ?: super.dispatchKeyEvent(event)
+        if (dispatchKeyEventListener?.invoke(event) == true) {
+            return true
+        }
+        return super.dispatchKeyEvent(event)
     }
 
 }
