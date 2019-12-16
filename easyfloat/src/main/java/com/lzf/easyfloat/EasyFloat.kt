@@ -2,6 +2,7 @@ package com.lzf.easyfloat
 
 import android.app.Activity
 import android.app.Application
+import android.view.KeyEvent
 import android.view.View
 import com.lzf.easyfloat.data.FloatConfig
 import com.lzf.easyfloat.enums.ShowPattern
@@ -235,6 +236,11 @@ class EasyFloat {
          * 针对kotlin 用户，传入带FloatCallbacks.Builder 返回值的 lambda，可按需回调
          * 为了避免方法重载时 出现编译错误的情况，更改了方法名
          */
+        fun registerDispatchKeyEventListener(listener: ((event: KeyEvent) -> Boolean)): Builder {
+            config.dispatchKeyEventListener
+            return this
+        }
+
         fun registerCallback(builder: FloatCallbacks.Builder.() -> Unit): Builder {
             config.floatCallbacks = FloatCallbacks().apply { registerListener(builder) }
             return this

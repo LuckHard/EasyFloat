@@ -64,4 +64,13 @@ internal class ParentFrameLayout(
         return super.dispatchKeyEventPreIme(event)
     }
 
+    /**
+     * 用于全屏悬浮窗时拦截back键或其它
+     */
+    var dispatchKeyEventListener: ((event: KeyEvent) -> Boolean)? = null
+
+    override fun dispatchKeyEvent(event: KeyEvent): Boolean {
+        return dispatchKeyEventListener?.invoke(event) ?: super.dispatchKeyEvent(event)
+    }
+
 }

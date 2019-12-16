@@ -92,6 +92,9 @@ internal class AppFloatManager(val context: Context, var config: FloatConfig) {
             }
         }
 
+        // 拦截系统按键
+        frameLayout?.dispatchKeyEventListener = config.dispatchKeyEventListener
+
         // 设置callbacks
         config.layoutView = floatingView
         config.invokeView?.invoke(floatingView)

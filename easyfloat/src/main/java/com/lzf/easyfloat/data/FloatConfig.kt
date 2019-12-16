@@ -1,5 +1,6 @@
 package com.lzf.easyfloat.data
 
+import android.view.KeyEvent
 import android.view.View
 import com.lzf.easyfloat.anim.AppFloatDefaultAnimator
 import com.lzf.easyfloat.anim.DefaultAnimator
@@ -59,6 +60,8 @@ data class FloatConfig(
     var callbacks: OnFloatCallbacks? = null,
     // 通过Kotlin DSL设置回调，无需复写全部方法，按需复写
     var floatCallbacks: FloatCallbacks? = null,
+    // 按键拦截
+    var dispatchKeyEventListener: ((event: KeyEvent) -> Boolean)? = null,
 
     // 出入动画
     var floatAnimator: OnFloatAnimator? = DefaultAnimator(),
